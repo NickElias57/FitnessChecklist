@@ -41,3 +41,28 @@ struct IntakeView: View {
         Text("Intake")
     }
 }
+struct Cycle: Identifiable {
+    let id = UUID()
+    let days: [Day]
+    
+}
+struct Day: Identifiable {
+    let id = UUID()
+    let workouts: [Workout]
+}
+struct Workout: Identifiable {
+    let id = UUID()
+    let name: String
+    let numReps: Int
+    let numSets : Int
+    let completed: Bool
+}
+struct Intake: Identifiable {
+    let id = UUID()
+    let list: [Supp]
+}
+struct Supp: Identifiable{
+    let id = UUID()
+    let name: String
+    let completed: Bool
+}
