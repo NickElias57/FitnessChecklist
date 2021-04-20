@@ -41,7 +41,7 @@ struct IntakeView: View {
         Text("Intake")
     }
 }
-struct Cycle: Identifiable {
+struct Cycle: Identifiable, Codable {
     let id = UUID()
     let days: [Day]
     
