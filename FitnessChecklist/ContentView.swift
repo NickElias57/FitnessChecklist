@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var supplmentList = SupplementList()
+    @State private var showingAddSupplementView = false
     var body: some View {
-       
+        
         TabView {
-           WorkoutView()
-             .tabItem {
-                Image(systemName: "figure.walk")
-                Text("Workouts")
-           }
-           IntakeView()
-             .tabItem {
-                Image(systemName: "flame")
-                Text("Intake")
-          }
+            WorkoutView()
+                .tabItem {
+                    Image(systemName: "figure.walk")
+                    Text("Workouts")
+                }
+            IntakeView()
+                .tabItem {
+                    Image(systemName: "flame")
+                    Text("Intake")
+                }
         }
         
     }
@@ -37,10 +39,43 @@ struct WorkoutView: View {
     }
 }
 struct IntakeView: View {
+    @ObservedObject var supplmentList = SupplementList()
+    @State private var showingAddSupplementView = false
     var body: some View {
-        Text("Intake")
+        NavigationView {
+            List {
+                ForEach(supplementList.items) { item in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(item.course)
+                                .font(.headline)
+                            Text(item.description)
+                        }
+                        Spacer()
+                        Text(item.dateCompleted, style: .date)
+                    }
+                }
+                .onMove(perform: { indices, newOffset in
+                    supplementList.items.move(fromOffsets: indices, toOffset: newOffset)
+                })
+                .onDelete(perform: { indexSet in
+                    supplementList.items.remove(atOffsets: indexSet)
+                })
+            }
+            .sheet(isPresented: $showingAddSupplementView, content: {
+                AddSupplementView(assignmentList: supplementList)
+            })
+            .navigationBarTitle("Supplement List")
+            .navigationBarItems(leading: EditButton(),
+                                trailing: Button(action: {
+                                                    showingAddAssignmentView = true}) {
+                                    Image(systemName: "plus")
+                                })
+        }
     }
 }
+
+
 struct Cycle: Identifiable, Codable {
     let id = UUID()
     let days: [Day]
@@ -61,8 +96,8 @@ struct Intake: Identifiable {
     let id = UUID()
     let list: [Supp]
 }
-struct Supp: Identifiable{
+struct SupplementItem: Identifiable{
     let id = UUID()
-    let name: String
-    let completed: Bool
+    let name = String()
+    let dateCompleted = Date()
 }
