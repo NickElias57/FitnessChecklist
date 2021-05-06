@@ -24,12 +24,12 @@ struct AddSupplementView: View {
                 }
                 DatePicker("Date", selection: $dateTaken, displayedComponents: .date)
             }
-            navigationBarTitle("Add New Supplement")
+                .navigationBarTitle("Add New Supplement")
                 .navigationBarItems(trailing: Button("Save") {
-                    if name.count > 0 {
-                        let item = SupplementItem(id: UUID(),
+                    if (name.count > 0) {
+                        let item = Supplement(id: UUID(),
                                                   name: name,
-                                                  dateTaken: dateTaken)
+                                                  dateCompleted: dateTaken)
                         supplementList.items.append(item)
                         presentationMode.wrappedValue.dismiss()
                     }

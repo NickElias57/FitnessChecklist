@@ -96,8 +96,8 @@ struct Intake: Identifiable {
     let id = UUID()
     let list: [Supp]
 }
-struct SupplementItem: Identifiable{
-    let id = UUID()
-    let name = String()
-    let dateCompleted = Date()
+struct Supplement: Identifiable, Codable{
+    var id = UUID()
+    var name = String()
+    var dateCompleted = Date()
 }

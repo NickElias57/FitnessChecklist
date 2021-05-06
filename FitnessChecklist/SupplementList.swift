@@ -7,7 +7,7 @@
 
 import Foundation
 class AssignmentList: ObservableObject {
-    @Published var items : [SupplementItem] {
+    @Published var items : [Supplement] {
         didSet {
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(items) {
@@ -19,7 +19,7 @@ class AssignmentList: ObservableObject {
     init() {
         if let items = UserDefaults.standard.data(forKey: "Data") {
             let decoder = JSONDecoder()
-            if let decoded = try? decoder.decode([SupplementItem].self, from: items) {
+            if let decoded = try? decoder.decode([Supplement].self, from: items) {
                 self.items = decoded
                 return
             }
