@@ -39,17 +39,17 @@ struct WorkoutView: View {
     }
 }
 struct IntakeView: View {
-    @ObservedObject var supplmentList = SupplementList()
+    @ObservedObject var supplementList = SupplementList()
     @State private var showingAddSupplementView = false
+    
     var body: some View {
         NavigationView {
             List {
                 ForEach(supplementList.items) { item in
                     HStack {
                         VStack(alignment: .leading) {
-                            Text(item.course)
+                            Text(item.name)
                                 .font(.headline)
-                            Text(item.description)
                         }
                         Spacer()
                         Text(item.dateCompleted, style: .date)
@@ -63,12 +63,12 @@ struct IntakeView: View {
                 })
             }
             .sheet(isPresented: $showingAddSupplementView, content: {
-                AddSupplementView(assignmentList: supplementList)
+                AddSupplementView(supplementList: supplementList)
             })
             .navigationBarTitle("Supplement List")
             .navigationBarItems(leading: EditButton(),
                                 trailing: Button(action: {
-                                                    showingAddAssignmentView = true}) {
+                                                    showingAddSupplementView = true}) {
                                     Image(systemName: "plus")
                                 })
         }

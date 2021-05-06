@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class AssignmentList: ObservableObject {
+class SupplementList: ObservableObject {
     @Published var items : [Supplement] {
         didSet {
             let encoder = JSONEncoder()
