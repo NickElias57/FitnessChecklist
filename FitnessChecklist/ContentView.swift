@@ -41,15 +41,15 @@ struct WorkoutView: View {
 struct IntakeView: View {
     @ObservedObject var supplementList = SupplementList()
     @State private var showingAddSupplementView = false
-    
     var body: some View {
         NavigationView {
             List {
                 ForEach(supplementList.items) { item in
                     HStack {
                         VStack(alignment: .leading) {
-                            Text(item.name)
+                            Text(item.type)
                                 .font(.headline)
+                            Text(item.name)
                         }
                         Spacer()
                         Text(item.dateCompleted, style: .date)
@@ -76,11 +76,7 @@ struct IntakeView: View {
 }
 
 
-struct Cycle: Identifiable, Codable {
-    let id = UUID()
-    let days: [Day]
-    
-}
+
 struct Day: Identifiable {
     let id = UUID()
     let workouts: [Workout]
@@ -92,12 +88,10 @@ struct Workout: Identifiable {
     let numSets : Int
     let completed: Bool
 }
-struct Intake: Identifiable {
-    let id = UUID()
-    let list: [Supp]
-}
+
 struct Supplement: Identifiable, Codable{
     var id = UUID()
     var name = String()
     var dateCompleted = Date()
+    var type = String()
 }
