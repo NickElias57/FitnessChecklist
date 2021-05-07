@@ -11,6 +11,9 @@
 		012ECE3C261CB9B700F93A70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012ECE3B261CB9B700F93A70 /* ContentView.swift */; };
 		012ECE3E261CB9BA00F93A70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012ECE3D261CB9BA00F93A70 /* Assets.xcassets */; };
 		012ECE41261CB9BA00F93A70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012ECE40261CB9BA00F93A70 /* Preview Assets.xcassets */; };
+		0132AD84264516BD00380067 /* WorkoutTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0132AD83264516BC00380067 /* WorkoutTask.swift */; };
+		0132AD872645170200380067 /* AddDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0132AD862645170200380067 /* AddDayView.swift */; };
+		0132AD8A2645194100380067 /* DayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0132AD892645194100380067 /* DayList.swift */; };
 		DEE2B24C2638659E002C7D9D /* AddSupplementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE2B24B2638659E002C7D9D /* AddSupplementView.swift */; };
 		DEE2B24F26386604002C7D9D /* SupplementList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE2B24E26386604002C7D9D /* SupplementList.swift */; };
 /* End PBXBuildFile section */
@@ -22,6 +25,9 @@
 		012ECE3D261CB9BA00F93A70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		012ECE40261CB9BA00F93A70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		012ECE42261CB9BA00F93A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0132AD83264516BC00380067 /* WorkoutTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutTask.swift; path = "../../../Downloads/FitnessChecklist-eb90260d08c8fd1836633172c26671f5fdf66333/FitnessChecklist/WorkoutTask.swift"; sourceTree = "<group>"; };
+		0132AD862645170200380067 /* AddDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayView.swift; sourceTree = "<group>"; };
+		0132AD892645194100380067 /* DayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayList.swift; sourceTree = "<group>"; };
 		DEE2B24B2638659E002C7D9D /* AddSupplementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSupplementView.swift; sourceTree = "<group>"; };
 		DEE2B24E26386604002C7D9D /* SupplementList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,8 +64,11 @@
 			children = (
 				012ECE39261CB9B700F93A70 /* FitnessChecklistApp.swift */,
 				012ECE3B261CB9B700F93A70 /* ContentView.swift */,
+				0132AD83264516BC00380067 /* WorkoutTask.swift */,
 				DEE2B24B2638659E002C7D9D /* AddSupplementView.swift */,
+				0132AD862645170200380067 /* AddDayView.swift */,
 				DEE2B24E26386604002C7D9D /* SupplementList.swift */,
+				0132AD892645194100380067 /* DayList.swift */,
 				012ECE3D261CB9BA00F93A70 /* Assets.xcassets */,
 				012ECE42261CB9BA00F93A70 /* Info.plist */,
 				012ECE3F261CB9BA00F93A70 /* Preview Content */,
@@ -145,7 +154,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				012ECE3C261CB9B700F93A70 /* ContentView.swift in Sources */,
+				0132AD872645170200380067 /* AddDayView.swift in Sources */,
 				DEE2B24F26386604002C7D9D /* SupplementList.swift in Sources */,
+				0132AD84264516BD00380067 /* WorkoutTask.swift in Sources */,
+				0132AD8A2645194100380067 /* DayList.swift in Sources */,
 				012ECE3A261CB9B700F93A70 /* FitnessChecklistApp.swift in Sources */,
 				DEE2B24C2638659E002C7D9D /* AddSupplementView.swift in Sources */,
 			);

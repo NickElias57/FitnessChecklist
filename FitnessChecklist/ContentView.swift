@@ -34,8 +34,37 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 struct WorkoutView: View {
+    @ObservedObject var dayList = DayList()
+    @State private var showingAddDayView = false
     var body: some View {
-        Text("Workouts")
+        NavigationView {
+            List {
+                ForEach(dayList.items) { item in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            
+                            Text(item.name)
+                        }
+                        
+                    }
+                }
+                .onMove(perform: { indices, newOffset in
+                    dayList.items.move(fromOffsets: indices, toOffset: newOffset)
+                })
+                .onDelete(perform: { indexSet in
+                    dayList.items.remove(atOffsets: indexSet)
+                })
+            }
+            .sheet(isPresented: $showingAddDayView, content: {
+                AddDayView(dayList: dayList)
+            })
+            .navigationBarTitle("Split List")
+            .navigationBarItems(leading: EditButton(),
+                                trailing: Button(action: {
+                                                    showingAddDayView = true}) {
+                                    Image(systemName: "plus")
+                                })
+        }
     }
 }
 struct IntakeView: View {
@@ -77,17 +106,19 @@ struct IntakeView: View {
 
 
 
-struct Day: Identifiable {
-    let id = UUID()
-    let workouts: [Workout]
+struct Day: Identifiable, Codable {
+    var id = UUID()
+    var workouts: [Workout]
+    var name: String
 }
-struct Workout: Identifiable {
-    let id = UUID()
-    let name: String
-    let numReps: Int
-    let numSets : Int
-    let completed: Bool
+struct Workout: Identifiable, Codable {
+    var id = UUID()
+    var name: String
+    var  numReps: Int
+    var numSets : Int
+    var completed: Bool
 }
+
 
 struct Supplement: Identifiable, Codable{
     var id = UUID()
