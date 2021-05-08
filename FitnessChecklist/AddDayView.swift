@@ -10,7 +10,7 @@ import SwiftUI
 struct AddDayView: View {
     @ObservedObject var dayList: DayList
     @State private var name = ""
-    @State var workouts:[Workout] = []
+    @State var workouts: [Workout]  = []
     @Environment(\.presentationMode) var presentationMode
  
     

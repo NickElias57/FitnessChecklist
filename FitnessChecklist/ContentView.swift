@@ -35,30 +35,65 @@ struct ContentView_Previews: PreviewProvider {
 }
 struct WorkoutView: View {
     @ObservedObject var dayList = DayList()
+    
     @State private var showingAddDayView = false
+    @State var showingAddWorkoutView = false
     var body: some View {
         NavigationView {
             List {
-                ForEach(dayList.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            
-                            Text(item.name)
-                        }
+                ForEach(dayList.items) {
+                    
+                    item in
+                    
+                    
+                NavigationLink(
+                    destination: VStack {
                         
-                    }
-                }
-                .onMove(perform: { indices, newOffset in
-                    dayList.items.move(fromOffsets: indices, toOffset: newOffset)
+                        NavigationView {
+                            var blah = item.workouts
+                            List {
+                                
+                                ForEach(blah) { workoutt in
+                                    
+                                    HStack {
+                                        
+                                        VStack(alignment: .leading) {
+
+                                            Text(workoutt.name)
+                                        }
+                                        Spacer()
+                                        
+                                    }
+                                }
+                                .onMove(perform: { indices, newOffset in
+                                    blah.items.move(fromOffsets: indices, toOffset: newOffset)
+                                })
+                                .onDelete(perform: { indexSet in
+                                    blah.items.remove(atOffsets: indexSet)
+                                })
+                            }
+                            .sheet(isPresented: $showingAddWorkoutView, content: {
+                                AddWorkoutView(workoutList: blah)
+                            })
+                            .navigationBarTitle("Workout List")
+                            .navigationBarItems(leading: EditButton(),
+                                                trailing: Button(action: {
+                                                                    showingAddWorkoutView = true}) {
+                                                    Image(systemName: "plus")
+                                                })
+                        }
+                   },
+                    label: {
+                        HStack {
+                            Text(item.name)
+                            
+                        }
+                    })
+                }}
+                .sheet(isPresented: $showingAddDayView, content: {
+                    AddDayView(dayList: dayList)
                 })
-                .onDelete(perform: { indexSet in
-                    dayList.items.remove(atOffsets: indexSet)
-                })
-            }
-            .sheet(isPresented: $showingAddDayView, content: {
-                AddDayView(dayList: dayList)
-            })
-            .navigationBarTitle("Split List")
+            .navigationTitle("Split List")
             .navigationBarItems(leading: EditButton(),
                                 trailing: Button(action: {
                                                     showingAddDayView = true}) {
@@ -75,10 +110,12 @@ struct IntakeView: View {
             List {
                 ForEach(supplementList.items) { item in
                     HStack {
+                        
                         VStack(alignment: .leading) {
                             Text(item.type)
                                 .font(.headline)
                             Text(item.name)
+                            
                         }
                         Spacer()
                         Text(item.dateCompleted, style: .date)
@@ -108,15 +145,15 @@ struct IntakeView: View {
 
 struct Day: Identifiable, Codable {
     var id = UUID()
-    var workouts: [Workout]
+    var workouts : [Workout]
     var name: String
 }
 struct Workout: Identifiable, Codable {
     var id = UUID()
     var name: String
-    var  numReps: Int
-    var numSets : Int
-    var completed: Bool
+    var  numReps:String
+    var numSets : String
+   
 }
 
 
