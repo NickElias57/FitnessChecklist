@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010F902F26472A70008F006B /* DayWorkoutHybrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010F902E26472A70008F006B /* DayWorkoutHybrid.swift */; };
 		012ECE3A261CB9B700F93A70 /* FitnessChecklistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012ECE39261CB9B700F93A70 /* FitnessChecklistApp.swift */; };
 		012ECE3C261CB9B700F93A70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012ECE3B261CB9B700F93A70 /* ContentView.swift */; };
 		012ECE3E261CB9BA00F93A70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012ECE3D261CB9BA00F93A70 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010F902E26472A70008F006B /* DayWorkoutHybrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWorkoutHybrid.swift; sourceTree = "<group>"; };
 		012ECE36261CB9B700F93A70 /* FitnessChecklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessChecklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		012ECE39261CB9B700F93A70 /* FitnessChecklistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessChecklistApp.swift; sourceTree = "<group>"; };
 		012ECE3B261CB9B700F93A70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				0152BCBE2645A27200739996 /* AddWorkoutView.swift */,
 				DEE2B24E26386604002C7D9D /* SupplementList.swift */,
 				0132AD892645194100380067 /* DayList.swift */,
+				010F902E26472A70008F006B /* DayWorkoutHybrid.swift */,
 				0152BCBB2645A21300739996 /* WorkoutList.swift */,
 				012ECE3D261CB9BA00F93A70 /* Assets.xcassets */,
 				012ECE42261CB9BA00F93A70 /* Info.plist */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0152BCBC2645A21300739996 /* WorkoutList.swift in Sources */,
+				010F902F26472A70008F006B /* DayWorkoutHybrid.swift in Sources */,
 				012ECE3C261CB9B700F93A70 /* ContentView.swift in Sources */,
 				0132AD872645170200380067 /* AddDayView.swift in Sources */,
 				DEE2B24F26386604002C7D9D /* SupplementList.swift in Sources */,

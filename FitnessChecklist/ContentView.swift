@@ -50,10 +50,9 @@ struct WorkoutView: View {
                     destination: VStack {
                         
                         NavigationView {
-                            var blah = item.workouts
+                            
                             List {
-                                
-                                ForEach(blah) { workoutt in
+                                ForEach(item.workouts) { workoutt in
                                     
                                     HStack {
                                         
@@ -65,15 +64,11 @@ struct WorkoutView: View {
                                         
                                     }
                                 }
-                                .onMove(perform: { indices, newOffset in
-                                    blah.items.move(fromOffsets: indices, toOffset: newOffset)
-                                })
-                                .onDelete(perform: { indexSet in
-                                    blah.items.remove(atOffsets: indexSet)
-                                })
+                                
+                                
                             }
                             .sheet(isPresented: $showingAddWorkoutView, content: {
-                                AddWorkoutView(workoutList: blah)
+                                AddWorkoutView(day: item)
                             })
                             .navigationBarTitle("Workout List")
                             .navigationBarItems(leading: EditButton(),
@@ -148,6 +143,7 @@ struct Day: Identifiable, Codable {
     var workouts : [Workout]
     var name: String
 }
+ 
 struct Workout: Identifiable, Codable {
     var id = UUID()
     var name: String

@@ -28,17 +28,13 @@ struct AddDayView: View {
                         let item = Day(id: UUID(),
                                        workouts: workouts, name: name)
                         dayList.items.append(item)
+                    print("done2")
                         presentationMode.wrappedValue.dismiss()
                     
                 })
         }
     }
 }
-
-
-
-
-
 
 
 struct AddDayView_Previews: PreviewProvider {

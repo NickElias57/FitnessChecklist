@@ -10,8 +10,7 @@
 import SwiftUI
 
 struct AddWorkoutView: View {
-    @ObservedObject var workoutList: WorkoutList
-   
+    @State var day : Day
     @State private var name = ""
     @State private var numReps = ""
     @State private var numSets = ""
@@ -30,8 +29,9 @@ struct AddWorkoutView: View {
                     
                         let item = Workout(id: UUID(),
                                            name: name, numReps: numReps, numSets:numSets)
-                        workoutList.items.append(item)
-                    
+                        
+                    day.workouts.append(item)
+                    print("done")
                         presentationMode.wrappedValue.dismiss()
                     
                 })
@@ -45,9 +45,5 @@ struct AddWorkoutView: View {
 
 
 
-struct AddWorkoutView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddWorkoutView(workoutList: WorkoutList())
-    }
-}
+
 

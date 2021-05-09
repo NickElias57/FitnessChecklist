@@ -5,7 +5,7 @@
 //  Created by Nick Elias on 5/7/21.
 //
 
-import Foundation
+/* import Foundation
 class WorkoutList: ObservableObject, Codable{
      var items : [Workout] {
         didSet {
@@ -27,3 +27,4 @@ class WorkoutList: ObservableObject, Codable{
         items = []
     }
 }
+ */
