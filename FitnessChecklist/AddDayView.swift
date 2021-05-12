@@ -13,8 +13,6 @@ struct AddDayView: View {
     @State var workouts: [Workout]  = []
     @Environment(\.presentationMode) var presentationMode
  
-    
-    
     var body: some View {
         NavigationView {
             Form {
@@ -25,7 +23,7 @@ struct AddDayView: View {
                 .navigationBarTitle("Add New Day")
                 .navigationBarItems(trailing: Button("Save") {
                     
-                        let item = Day(id: UUID(),
+                    let item = Day(id: UUID(),
                                        workouts: workouts, name: name)
                         dayList.items.append(item)
                     print("done2")

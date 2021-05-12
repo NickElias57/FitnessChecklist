@@ -26,26 +26,20 @@ struct AddSupplementView: View {
                 TextField("Supplement Name", text: $name)
                 DatePicker("Date", selection: $dateTaken, displayedComponents: .date)
             }
-                .navigationBarTitle("Add New Supplement")
-                .navigationBarItems(trailing: Button("Save") {
-                    if (type.count > 0) {
-                        let item = Supplement(id: UUID(),
-                                                  name: name,
-                                                  dateCompleted: dateTaken,
-                                                  type: type)
-                        supplementList.items.append(item)
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                })
+            .navigationBarTitle("Add New Supplement")
+            .navigationBarItems(trailing: Button("Save") {
+                if (type.count > 0) {
+                    let item = Supplement(id: UUID(),
+                                          name: name,
+                                          dateCompleted: dateTaken,
+                                          type: type)
+                    supplementList.items.append(item)
+                    presentationMode.wrappedValue.dismiss()
+                }
+            })
         }
     }
 }
-
-
-
-
-
-
 
 struct AddSupplementView_Previews: PreviewProvider {
     static var previews: some View {
