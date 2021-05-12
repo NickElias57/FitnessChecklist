@@ -85,8 +85,10 @@ struct WorkoutView: View {
                         label: {
                             HStack {
                                 Text(item.name)
-                                
+                                    .font(.headline)
+                                Spacer()
                             }
+                            
                         })}
                         .onMove(perform: { indices, newOffset in
                             dayList.items.move(fromOffsets: indices, toOffset: newOffset)

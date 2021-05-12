@@ -11,13 +11,13 @@ class SupplementList: ObservableObject {
         didSet {
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(items) {
-                UserDefaults.standard.set(encoded, forKey: "Data")
+                UserDefaults.standard.set(encoded, forKey: "Data2")
             }
         }
     }
     
     init() {
-        if let items = UserDefaults.standard.data(forKey: "Data") {
+        if let items = UserDefaults.standard.data(forKey: "Data2") {
             let decoder = JSONDecoder()
             if let decoded = try? decoder.decode([Supplement].self, from: items) {
                 self.items = decoded
