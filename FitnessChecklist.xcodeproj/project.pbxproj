@@ -13,7 +13,6 @@
 		012ECE41261CB9BA00F93A70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012ECE40261CB9BA00F93A70 /* Preview Assets.xcassets */; };
 		0132AD872645170200380067 /* AddDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0132AD862645170200380067 /* AddDayView.swift */; };
 		0132AD8A2645194100380067 /* DayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0132AD892645194100380067 /* DayList.swift */; };
-		0152BCBC2645A21300739996 /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152BCBB2645A21300739996 /* WorkoutList.swift */; };
 		0152BCBF2645A27200739996 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152BCBE2645A27200739996 /* AddWorkoutView.swift */; };
 		DEE2B24C2638659E002C7D9D /* AddSupplementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE2B24B2638659E002C7D9D /* AddSupplementView.swift */; };
 		DEE2B24F26386604002C7D9D /* SupplementList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE2B24E26386604002C7D9D /* SupplementList.swift */; };
@@ -28,7 +27,6 @@
 		012ECE42261CB9BA00F93A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0132AD862645170200380067 /* AddDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayView.swift; sourceTree = "<group>"; };
 		0132AD892645194100380067 /* DayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayList.swift; sourceTree = "<group>"; };
-		0152BCBB2645A21300739996 /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
 		0152BCBE2645A27200739996 /* AddWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutView.swift; sourceTree = "<group>"; };
 		DEE2B24B2638659E002C7D9D /* AddSupplementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSupplementView.swift; sourceTree = "<group>"; };
 		DEE2B24E26386604002C7D9D /* SupplementList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementList.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				0152BCBE2645A27200739996 /* AddWorkoutView.swift */,
 				DEE2B24E26386604002C7D9D /* SupplementList.swift */,
 				0132AD892645194100380067 /* DayList.swift */,
-				0152BCBB2645A21300739996 /* WorkoutList.swift */,
 				012ECE3D261CB9BA00F93A70 /* Assets.xcassets */,
 				012ECE42261CB9BA00F93A70 /* Info.plist */,
 				012ECE3F261CB9BA00F93A70 /* Preview Content */,
@@ -156,7 +153,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0152BCBC2645A21300739996 /* WorkoutList.swift in Sources */,
 				012ECE3C261CB9B700F93A70 /* ContentView.swift in Sources */,
 				0132AD872645170200380067 /* AddDayView.swift in Sources */,
 				DEE2B24F26386604002C7D9D /* SupplementList.swift in Sources */,

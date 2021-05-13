@@ -20,7 +20,6 @@ struct AddWorkoutView: View {
     @State private var day : Day = Day(id: UUID(), workouts: [], name: "")
     @Environment(\.presentationMode) var presentationMode
    
-    
     var body: some View {
        
         NavigationView {
@@ -54,12 +53,10 @@ struct AddWorkoutView: View {
                     if item.name == day.name {
                         dayNum = index ?? 0
                     }
-                    
                 }
                 dayList.items[dayNum].workouts.append(item)
                 print("done")
                 presentationMode.wrappedValue.dismiss()
-                
             })
         }
     }

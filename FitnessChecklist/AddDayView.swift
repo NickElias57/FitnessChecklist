@@ -12,28 +12,24 @@ struct AddDayView: View {
     @State private var name = ""
     @State var workouts: [Workout]  = []
     @Environment(\.presentationMode) var presentationMode
- 
+    
     var body: some View {
         NavigationView {
             Form {
-                
                 TextField("Day Name", text: $name)
-                
             }
-                .navigationBarTitle("Add New Day")
-                .navigationBarItems(trailing: Button("Save") {
-                    
-                    let item = Day(id: UUID(),
-                                       workouts: workouts, name: name)
-                        dayList.items.append(item)
-                    print("done2")
-                        presentationMode.wrappedValue.dismiss()
-                    
-                })
+            .navigationBarTitle("Add New Day")
+            .navigationBarItems(trailing: Button("Save") {
+                
+                let item = Day(id: UUID(),
+                               workouts: workouts, name: name)
+                dayList.items.append(item)
+                print("done2")
+                presentationMode.wrappedValue.dismiss()
+            })
         }
     }
 }
-
 
 struct AddDayView_Previews: PreviewProvider {
     static var previews: some View {
