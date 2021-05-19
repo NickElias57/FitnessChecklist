@@ -26,7 +26,7 @@ struct AddSupplementView: View {
                 TextField("Supplement Name", text: $name)
                 DatePicker("Date", selection: $dateTaken, displayedComponents: .date)
             }
-            .navigationBarTitle("Add New Supplement")
+            .navigationBarTitle("Add Supplement")
             .navigationBarItems(trailing: Button("Save") {
                 if (type.count > 0) {
                     let item = Supplement(id: UUID(),
